@@ -24,6 +24,9 @@ public class Hero : MonoBehaviour
 
     private GameObject lastTriggerGO = null;
 
+    public delegate void WeaponFireDelegate();
+    public WeaponFireDelegate fireDelegate;
+
     private void Awake()
     {
         if (s == null)
@@ -33,6 +36,8 @@ public class Hero : MonoBehaviour
         {
             Debug.LogError("Hero.Awake() - Attempted to assign second Hero Singleton!");
         }
+
+        //fireDelegate += TempFire;
     }
 
     // Start is called before the first frame update
@@ -75,22 +80,17 @@ public class Hero : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(yAxis * pitchMult, xAxis * rollMult, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        //if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    TempFire();
+        //}
+
+        if (Input.GetAxis("Jump") == 1 && fireDelegate != null)
         {
-            TempFire();
+            fireDelegate();
         }
     }
 
-    public void TempFire()
-    {
-        GameObject projGO = Instantiate(projectilePrefab);
-
-        projGO.transform.position = transform.position;
-
-        Rigidbody rigidB = projGO.GetComponent<Rigidbody>();
- 
-        rigidB.velocity = Vector3.up * projectileSpeed;
-    }
 
     public float shieldLevel
     {
