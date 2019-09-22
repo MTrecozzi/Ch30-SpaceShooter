@@ -17,6 +17,8 @@ public class Hero : MonoBehaviour
 
     public float projectileSpeed = 40;
 
+    public Weapon[] weapons;
+
     [Header("Set Dynamically")]
 
     [SerializeField]
@@ -27,7 +29,7 @@ public class Hero : MonoBehaviour
     public delegate void WeaponFireDelegate();
     public WeaponFireDelegate fireDelegate;
 
-    private void Awake()
+    private void Start()
     {
         if (s == null)
         {
@@ -36,14 +38,11 @@ public class Hero : MonoBehaviour
         {
             Debug.LogError("Hero.Awake() - Attempted to assign second Hero Singleton!");
         }
-
         //fireDelegate += TempFire;
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        ClearWeapons();
+
+        weapons[0].SetType(WeaponType.blaster);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,13 +55,44 @@ public class Hero : MonoBehaviour
             return;
         }
 
+
         if (go.CompareTag("Enemy"))
         {
             shieldLevel -= 1;
 
             Destroy(go);
+        } else if (go.CompareTag("PowerUp")) {
+            AbsorbPowerUp(go);
         }
         else print("Triggered by non-Enemy: " + go.name);
+    }
+
+    public void AbsorbPowerUp(GameObject go)
+    {
+        PowerUp pu = go.GetComponent<PowerUp>();
+        switch (pu.type)
+        {
+            case WeaponType.shield:
+                shieldLevel++;
+                break;
+
+            default:
+                if (pu.type == weapons[0].type) // same type, so add another level of it
+                {
+                    Weapon w = GetEmptyWeaponSlot();
+                    if (w != null) // if remaining slots != null
+                    {
+                        w.SetType(pu.type);
+                    }
+                } else
+                {
+                    ClearWeapons();
+                    weapons[0].SetType(pu.type);
+                }
+                break;
+        }
+
+        pu.AbsorbedBy(this.gameObject);
     }
 
     // Update is called once per frame
@@ -91,7 +121,6 @@ public class Hero : MonoBehaviour
         }
     }
 
-
     public float shieldLevel
     {
         get { return _shieldLevel; }
@@ -103,5 +132,25 @@ public class Hero : MonoBehaviour
                     Main.S.DelayedRestart(gameRestartDelay);
                 }
             }
+    }
+
+    Weapon GetEmptyWeaponSlot()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (weapons[i].type == WeaponType.none)
+            {
+                return (weapons[i]);
+            }
+        }
+        return (null);
+    }
+
+    void ClearWeapons()
+    {
+        foreach(Weapon w in weapons)
+        {
+            w.SetType(WeaponType.none);
+        }
     }
 }
