@@ -11,9 +11,18 @@ public class Hero : MonoBehaviour
     public float speed = 30;
     public float rollMult = -45;
     public float pitchMult = 30;
+    public float gameRestartDelay = 2f;
+
+    public GameObject projectilePrefab;
+
+    public float projectileSpeed = 40;
 
     [Header("Set Dynamically")]
-    public float shieldLevel = 1;
+
+    [SerializeField]
+    private float _shieldLevel = 1;
+
+    private GameObject lastTriggerGO = null;
 
     private void Awake()
     {
@@ -34,7 +43,21 @@ public class Hero : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Triggered: " + other.gameObject.name);
+        GameObject go = other.gameObject;
+        print("Triggered: " + go.name);
+
+        if (go == lastTriggerGO)
+        {
+            return;
+        }
+
+        if (go.CompareTag("Enemy"))
+        {
+            shieldLevel -= 1;
+
+            Destroy(go);
+        }
+        else print("Triggered by non-Enemy: " + go.name);
     }
 
     // Update is called once per frame
@@ -51,5 +74,34 @@ public class Hero : MonoBehaviour
         transform.position = newPos;
 
         transform.rotation = Quaternion.Euler(yAxis * pitchMult, xAxis * rollMult, 0);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TempFire();
+        }
+    }
+
+    public void TempFire()
+    {
+        GameObject projGO = Instantiate(projectilePrefab);
+
+        projGO.transform.position = transform.position;
+
+        Rigidbody rigidB = projGO.GetComponent<Rigidbody>();
+ 
+        rigidB.velocity = Vector3.up * projectileSpeed;
+    }
+
+    public float shieldLevel
+    {
+        get { return _shieldLevel; }
+        set {
+            _shieldLevel = Mathf.Min(value, 4);
+                if (value < 0)
+                {
+                    Destroy(this.gameObject);
+                    Main.S.DelayedRestart(gameRestartDelay);
+                }
+            }
     }
 }
