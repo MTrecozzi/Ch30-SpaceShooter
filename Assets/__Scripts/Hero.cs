@@ -32,6 +32,11 @@ public class Hero : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Triggered: " + other.gameObject.name);
+    }
+
     // Update is called once per frame
     void Update()
     {

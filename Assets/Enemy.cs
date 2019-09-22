@@ -20,6 +20,13 @@ public class Enemy : MonoBehaviour
 
     }
 
+    private BoundsCheck bndCheck;
+
+    private void Awake()
+    {
+        bndCheck = GetComponent<BoundsCheck>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +37,13 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (bndCheck != null && bndCheck.offDown)
+        {
+            
+                Destroy(gameObject);
+            
+        }
     }
 
     public virtual void Move()

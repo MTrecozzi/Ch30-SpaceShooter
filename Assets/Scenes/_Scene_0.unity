@@ -112,75 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &132649964
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3504577085071344249, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy 0 Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504577085071344250, guid: bee225a9aede2394d9370fc282e786ed,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bee225a9aede2394d9370fc282e786ed, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +192,8 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -332,6 +265,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9622e5ca5f820459ada723a8d3a0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  keepOnScreen: 0
+  camWidth: 0
+  camHeight: 0
+  offRight: 0
+  offLeft: 0
+  offUp: 0
+  offDown: 0
+  isOnScreen: 1
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13501bf7337d074a8dc120f87fc7877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabEnemies:
+  - {fileID: 3504577085071344249, guid: bee225a9aede2394d9370fc282e786ed, type: 3}
+  - {fileID: 4146672932895458888, guid: 919358a608b0f8941a1bcf9d251d4cca, type: 3}
+  - {fileID: 1658320065301245956, guid: 92125242d9e3c1d45810739d116a689f, type: 3}
+  - {fileID: 9050513369615174018, guid: 7c618dafcf1cd84478be48775da10dff, type: 3}
+  - {fileID: 5356928895151346514, guid: 66a0ca14d740a9346b8b8296fce86e2a, type: 3}
+  enemySpawnPerSecond: 0.5
+  enemyDefaultPadding: 1.5
 --- !u!1 &1183956791
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +318,7 @@ GameObject:
   - component: {fileID: 1183956795}
   - component: {fileID: 1183956794}
   - component: {fileID: 1183956793}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532893929}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,9 +440,9 @@ GameObject:
   - component: {fileID: 1593819000}
   - component: {fileID: 1593818999}
   - component: {fileID: 1593819001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: _Hero
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,8 +509,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1
+  keepOnScreen: 1
   camWidth: 0
   camHeight: 0
+  offRight: 0
+  offLeft: 0
+  offUp: 0
+  offDown: 0
+  isOnScreen: 1
 --- !u!1 &1605915493
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +530,7 @@ GameObject:
   - component: {fileID: 1605915495}
   - component: {fileID: 1605915494}
   - component: {fileID: 1605915498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +545,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605915493}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -655,7 +635,7 @@ GameObject:
   - component: {fileID: 1663972986}
   - component: {fileID: 1663972985}
   - component: {fileID: 1663972984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
