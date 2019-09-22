@@ -18,7 +18,7 @@ public class WeaponDefinition
 
     public GameObject projectilePrefab;
 
-    public Color projectileCOlor = Color.white;
+    public Color projectileColor = Color.white;
 
     public float damageOnHit = 0;
 
