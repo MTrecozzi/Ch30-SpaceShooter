@@ -17,6 +17,14 @@ public class Main : MonoBehaviour
 
     public WeaponDefinition[] weaponDefinitions;
 
+    public GameObject prefabPowerUp;
+    public WeaponType[] powerUpFrequency = new WeaponType[]{
+
+       WeaponType.blaster, WeaponType.blaster,
+       WeaponType.spread,  WeaponType.shield
+    };
+
+
 
     private BoundsCheck bndCheck;
 
@@ -36,6 +44,24 @@ public class Main : MonoBehaviour
             WEAP_DICT[def.type] = def;
         }
 
+    }
+
+    public void shipDestroyed(Enemy e)
+    {
+        if (Random.value <= e.powerUpDropChance)
+        {
+            int ndx = Random.Range(0, powerUpFrequency.Length);
+
+            WeaponType puType = powerUpFrequency[ndx];
+
+            GameObject go = Instantiate(prefabPowerUp) as GameObject;
+
+            PowerUp pu = go.GetComponent<PowerUp>();
+
+            pu.SetType(puType);
+
+            pu.transform.position = e.transform.position;
+        }
     }
 
 

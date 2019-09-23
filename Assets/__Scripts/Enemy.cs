@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float health = 10;
     public int score = 100;
 
+    public float powerUpDropChance = 1f;
+
     public float showDamageDuration = 0.1f;
 
     public Vector3 pos
@@ -76,7 +78,17 @@ public class Enemy : MonoBehaviour
 
                 if (health <= 0)
                 {
+
+                    if (!notifiedOfDestruction)
+                    {
+                        Main.S.shipDestroyed(this);
+                    }
+
+                    notifiedOfDestruction = true;
+
                     Destroy(this.gameObject);
+
+
                 }
 
                 Destroy(otherGO);
