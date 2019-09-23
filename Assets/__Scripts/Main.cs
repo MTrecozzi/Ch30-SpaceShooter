@@ -46,7 +46,7 @@ public class Main : MonoBehaviour
 
     }
 
-    public void shipDestroyed(Enemy e)
+    public void ShipDestroyed(Enemy e)
     {
         if (Random.value <= e.powerUpDropChance)
         {

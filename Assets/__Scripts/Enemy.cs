@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour
 
                     if (!notifiedOfDestruction)
                     {
-                        Main.S.shipDestroyed(this);
+                        Main.S.ShipDestroyed(this);
                     }
 
                     notifiedOfDestruction = true;

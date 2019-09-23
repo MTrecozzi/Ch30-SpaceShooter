@@ -1,140 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &262837294
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 262837295}
-  - component: {fileID: 262837296}
-  m_Layer: 10
-  m_Name: FuseLage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &262837295
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262837294}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5356928895151346513}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &262837296
+--- !u!136 &2449352108047384713
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262837294}
+  m_GameObject: {fileID: 52682273300954372}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.9333331
-  m_Height: 3.7229106
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.096413255, z: 0}
---- !u!1 &1074212585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1074212586}
-  - component: {fileID: 1074212587}
-  m_Layer: 10
-  m_Name: Wing L
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1074212586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074212585}
-  m_LocalRotation: {x: 0, y: 0, z: -0.35836798, w: 0.93358046}
-  m_LocalPosition: {x: 1.462, y: 0.123, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5356928895151346513}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -42}
---- !u!136 &1074212587
+  m_Radius: 0.52607435
+  m_Height: 1.8891486
+  m_Direction: 0
+  m_Center: {x: 0.000000019964094, y: -0.0000018179709, z: 0.3175929}
+--- !u!136 &1469573777092554895
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074212585}
+  m_GameObject: {fileID: 52682273300954376}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 3.9391644
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.21999729, z: 0}
---- !u!1 &2091158324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2091158325}
-  - component: {fileID: 2091158326}
-  m_Layer: 10
-  m_Name: Wing L (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2091158325
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091158324}
-  m_LocalRotation: {x: 0, y: 0, z: 0.35836798, w: 0.93358046}
-  m_LocalPosition: {x: -1.471, y: 0.117, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5356928895151346513}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42}
---- !u!136 &2091158326
+  m_Radius: 0.9231228
+  m_Height: 1.7833483
+  m_Direction: 0
+  m_Center: {x: 0.00000008200325, y: -0.000000021909216, z: 0.3175929}
+--- !u!136 &6938493604826472906
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091158324}
+  m_GameObject: {fileID: 52682273300954378}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 3.9391644
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.21999729, z: 0}
+  m_Radius: 0.52607435
+  m_Height: 1.8891486
+  m_Direction: 0
+  m_Center: {x: 0.000000019964094, y: -0.0000018179709, z: 0.3175929}
 --- !u!114 &7303885292761566727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +54,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4343a3cff5d7d414182d562301b12912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  fireRate: 0.3
+  health: 10
+  score: 100
+  powerUpDropChance: 1
+  showDamageDuration: 0.1
+  originalColors: []
+  materials: []
+  showingDamage: 0
+  damageDoneTime: 0
+  notifiedOfDestruction: 0
+  parts:
+  - name: Fuselage
+    health: 10
+    protectedBy:
+    - Left Wing
+    go: {fileID: 0}
+    mat: {fileID: 0}
+  - name: Left Wing
+    health: 10
+    protectedBy:
+    - Right Wing
+    go: {fileID: 0}
+    mat: {fileID: 0}
+  - name: Right Wing
+    health: 10
+    protectedBy: []
+    go: {fileID: 0}
+    mat: {fileID: 0}
 --- !u!1001 &52682273301052332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164,7 +100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 43d7a1fd4a1df994393661fb3527760f, type: 3}
       propertyPath: m_Name
-      value: Main
+      value: Fuselage
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 43d7a1fd4a1df994393661fb3527760f, type: 3}
       propertyPath: m_Name
@@ -220,6 +156,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d7a1fd4a1df994393661fb3527760f, type: 3}
+--- !u!1 &52682273300954376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: 43d7a1fd4a1df994393661fb3527760f,
+    type: 3}
+  m_PrefabInstance: {fileID: 52682273301052332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &52682273300954378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: 43d7a1fd4a1df994393661fb3527760f,
+    type: 3}
+  m_PrefabInstance: {fileID: 52682273301052332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &52682273300954372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: 43d7a1fd4a1df994393661fb3527760f,
+    type: 3}
+  m_PrefabInstance: {fileID: 52682273301052332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &52682274740589646
 PrefabInstance:
   m_ObjectHideFlags: 0
