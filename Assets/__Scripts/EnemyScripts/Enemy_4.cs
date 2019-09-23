@@ -17,12 +17,15 @@ public class Part
 
     //[HideInInspector]
     public Material mat;
+
+
 }
 
 public class Enemy_4 : Enemy
 {
 
     [Header("Set in INspector: Enemy_4")]
+    
     public Part[] parts; // the array of ship parts
 
     private Vector3 p0, p1; // two points to interpolate
