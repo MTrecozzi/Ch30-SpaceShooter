@@ -5,6 +5,21 @@ using UnityEngine;
 public class Enemy_4 : Enemy
 {
 
+    [System.Serializable]
+
+    public class Part
+    {
+        public string name;
+        public float health;
+
+        public string[] protectedBy;
+
+        [HideInInspector]
+        public GameObject go;
+
+        [HideInInspector] public Material mat;
+    }
+
     private Vector3 p0, p1; // two points to interpolate
     private float timeStart;
 
